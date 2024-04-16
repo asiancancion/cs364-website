@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>WYO Attendance</title>
+    <link rel="stylesheet" type="text/css" href="csl.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  
+  <body class = "s">    
+    <h1>Williamsburg Youth Orchestra Attendance System 
+    </h1>
+    <h2>
+    <break>
+    <img src = "wyo-logo.jpeg" /> </break>
+    <nav>
+    <a href = "./start.html">Login Page</a> | 
+    <a href = "./admin.html">Admin Page</a> | 
+    <a href = "./member.html">Member Page</a></nav></h2>
+    <h3>Login Page</h3>
+    <p>
+    
+    <form id = "form" action = "demo.php" method = "post" onsubmit="return this.checkValidity() && emailLength();">
+    
+      Email: <input type = "email" id = "emailAddress" name = "emailAddress" required pattern = "^[A-Za-z0-9_.-]+@[A-Za-z0-9_.-]{2,50}$" title = "Email must be 1-50 characters and only contain spaces, letters, and hyphens"/></br>
+      
+      Password: <input type = "text" name = "lastName" required pattern = "^[A-Za-z\s\-]{1,50}$" title = "Last Name must be 1-50 characters and only contain spaces, letters, and hyphens"/></br>
+      
+      </p>
+  </body>
+  
+  
+</html>
