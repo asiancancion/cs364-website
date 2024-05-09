@@ -12,14 +12,11 @@
   
   <body>    
     <h1>Williamsburg Youth Orchestra Attendance System</h1>
+    <a href="logout.php"><button>Logout</button></a>
     <h2>
     <break>
     <img src = "wyo-logo.jpeg" /> </break>
     <nav>
-    <a href = "./start.php">Login Page</a> | 
-    <a href = "./admin.html">Admin Page</a> | 
-    <a href = "./member.html">Member Page</a></nav></h2>
-    <a href="logout.php">Logout</a>
     <div class="table">
       <center>
       <style>
@@ -53,8 +50,8 @@
                 <th>Phone Number</th>
                 <th>Email</th>
                 <th>Instrument</th>
-                <th>Days Missed</th>
-                <th>Check in/Out</th>
+                <th>Rehearsal Number</th>
+                <th>Check in</th>
               </tr>
               
 
@@ -71,18 +68,28 @@
 		$result = pg_prepare($connection, "my_query", "SELECT * FROM ORCHESTRA_MEMBER WHERE EMAIL = $1");
 		$result = pg_execute($connection, "my_query", array($email));
 		while ($row = pg_fetch_assoc($result)) {
-           		 echo "<tr>";
+           		 echo "<tr> <form action='checkIn.php' method='post'>";
           		 echo "<td>" . $row['firstname'] . "</td>";
          		 echo "<td>" . $row['lastname'] . "</td>";
          		 echo "<td>" . $row['phone_number'] . "</td>";
          		 echo "<td>" . $row['email'] . "</td>";
          		 echo "<td>" . $row['instrument'] . "</td>";
-         		 echo "<td>" . $row['absence_number'] . "</td>";
-           		 echo '<td>
-                		<label class = "switch">
-                		<input type = "checkbox">
-                		<span class="slider round"></span>
-                		</label></td>';
+         		 echo "<td> 
+    				<select class = 'select1' id='number' name='number'>
+    			 	<option value='1'>1</option>
+     				<option value='2'>2</option>
+   				<option value='3'>3</option>
+        			<option value='4'>4</option>
+       				<option value='5'>5</option>
+       				<option value='6'>6</option>
+   				</select>
+         		 	</td>";
+           		 echo "<td>
+           		 	<input type = 'hidden' name = 'email' value ='" . $row['email'] . "'/>
+           		 	<input type = 'hidden' name = 'firstName' value ='" . $row['firstname'] . "'/>
+                          	<button type='submit' name='checkInButton'>Check In</button>
+                      		</form></td>
+                		</label></td>";
                 	echo "</tr>";
       		 }
 

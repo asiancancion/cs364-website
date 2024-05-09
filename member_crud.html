@@ -1,131 +1,68 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title> Service Partners </title>
-    <link rel="stylesheet" type="text/css" href="csl.css"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body class = "partners">    
-    <h1>Williamsburg Youth Orchestra Attendance System</h1>
-  
+<head>
+  <title>Edit Members</title>
+  <link rel="stylesheet" type="text/css" href="csl.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="partners">
+  <h1>Williamsburg Youth Orchestra Attendance System</h1>
+    <a href="logout.php"><button>Logout</button></a>
     <h2>
     <break>
     <img src = "wyo-logo.jpeg" /> </break>
-    <h2>
     <nav>
-        <a href = "./member_crud.html"> <button>Edit Members</button></a> | 
-        <a href = "./user_crud.html"><button>Edit Users</button></a> | 
-        <a href = "./rehearsal.php"><button>Rehearsal</button></a> |
-        <a href = "./rental.php"><button>Rentals</button></a> |
-        <a href="./admin.php"><button>Admin</button></a> 
-    </nav></h2>
-
-<style>
-    input[type=text], select {
-      width: 25%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-
-    input[type=password], select {
-      width: 25%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-    
-    input[type=submit] {
-      width: 20%;
-      background-color: gray;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    
-    input[type=submit]:hover {
-      background-color: #45a049;
-    }
-    input[type=tel] {
-      width: 22%;
-      background-color:white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    label {
-      display: inline-block;
-      width: 25%;
-      text-align: left;
-    }
-    .container{
-      display: flex;
-      /* justify-content: space-evenly; */
-    }
-    .form-style{
-      width: 20px%;
-      padding: 10px;
-      
-    }
-    div {
-      border-radius: 5px;
-      background-color: #f2f2f2;
-      padding: 20px;
-    }
-    </style>
-    
-
+    <br><br>
+    <nav>
+        <a href="./member_crud.html"><button>Edit Members</button></a> 
+        <a href="./user_crud.html"><button>Edit Users</button></a> 
+        <a href="./rehearsal.php"><button>Rehearsal</button></a> 
+        <a href="./rental.php"><button>Rentals</button></a> 
+        <a href="./admin.php"><button>Admin</button></a>
+        <br>
+        <br>
+    </nav>
+    </h2>
     <center>
-      <div class="adminTitle">
+    <div class="adminTitle">
       <h2>Edit Members</h2>
-      </div>
-    </center>
-      <center>
+    </div>
+  </center>
+
+  <center>
     <h4>Add members</h4>
-    <!-- get data to add in -->
+    <div>
     <form id="form" action="createMember.php" method="POST">
-      First Name<input 
-        type="text" 
-        id="firstName" 
-        pattern="[A-Za-z\s\-]{1,50}"
-        placeholder="Less than 50 characters"
-        name = "firstName"
-        ><br><br>
-      Last Name<input
-        type="text"
-        id="lastName"
-        patter="[A-Za-z\s\-]{1,50}"
-        placeholder="Less than 50 characters"
-        name = "lastName"
-        ><br><br>
-      Phone<input
-        type="text"
-        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-        id="phoneNum"
-        placeholder="(721) 333-7575"
-        name = "phoneNum"
-        ><br><br>
-      Email<input
-        type="text"
-        id="email"
-        patter="^[^!-#-$-%-^-&-*-(-)-+-=][A-Z0-9+_.-]+@[A-Z0-9.-]+$"
-        placeholder="example@gmail.com"
-        name = "email"
-        ><br><br>
-      
-
-      Instrument
+      <label>First Name</label><br>
+      <input
+      type="text"
+      id="firstName"
+      pattern="[A-Za-z\s\-]{1,50}"
+      placeholder="Less than 50 characters"
+      name="firstName"
+      ><br><br>
+      <label>Last Name</label><br><input
+      type="text"
+      id="lastName"
+      patter="[A-Za-z\s\-]{1,50}"
+      placeholder="Less than 50 characters"
+      name="lastName"
+      ><br><br>
+      <label>Phone</label><br><input
+      type="text"
+      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+      id="phoneNum"
+      placeholder="(721) 333-7575"
+      name="phoneNum"
+      ><br><br>
+      <label>Email</label><br><input
+      type="text"
+      id="email"
+      patter="^[^!-#-$-%-^-&-*-(-)-+-=][A-Z0-9+_.-]+@[A-Z0-9.-]+$"
+      placeholder="example@gmail.com"
+      name="email"
+      ><br><br>
+      <label>Instrument</label><br>
       <select name="instrument" id="instrument">
         <option value="Viola">Viola</option>
         <option value="Violin">Violin</option>
@@ -139,53 +76,45 @@
       </select>
       <br><br>
 
-
-
-      <input type="submit" name = "submit" value = "Add User">
-
+      <input type="submit" name="submit" value="Add User">
     </form>
     </center>
     </div>
-        
-        </div>
 
-
-
-      <center>
+  <center>
     <h4>Edit members</h4>
-    <!-- get data to add in -->
+  <div>
     <form id="form" action="updateMember.php" method="POST">
-      First Name<input 
-        type="text" 
-        id="firstName" 
-        pattern="[A-Za-z\s\-]{1,50}"
-        placeholder="Less than 50 characters"
-        name = "firstName"
-        ><br><br>
-      Last Name<input
-        type="text"
-        id="lastName"
-        pattern="[A-Za-z\s\-]{1,50}"
-        placeholder="Less than 50 characters"
-        name = "lastName"
-        ><br><br>
-      Phone<input
-        type="text"
-        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-        id="phoneNum"
-        placeholder="(721) 333-7575"
-        name = "phoneNum"
-        ><br><br>
-      Email<input
-        type="text"
-        id="email"
-        pattern="^[^!-#-$-%-^-&-*-(-)-+-=][A-Z0-9+_.-]+@[A-Z0-9.-]+$"
-        placeholder="example@gmail.com"
-        name = "email"
-        ><br><br>
-      
+      <label>First Name</label><br><input
+      type="text"
+      id="firstName"
+      pattern="[A-Za-z\s\-]{1,50}"
+      placeholder="Less than 50 characters"
+      name="firstName"
+      ><br><br>
+      <label>Last Name</label><br><input
+      type="text"
+      id="lastName"
+      pattern="[A-Za-z\s\-]{1,50}"
+      placeholder="Less than 50 characters"
+      name="lastName"
+      ><br><br>
+      <label>Phone</label><br><input
+      type="text"
+      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+      id="phoneNum"
+      placeholder="(721) 333-7575"
+      name="phoneNum"
+      ><br><br>
+      <label>Email</label><br><input
+      type="text"
+      id="email"
+      pattern="^[^!-#-$-%-^-&-*-(-)-+-=][A-Z0-9+_.-]+@[A-Z0-9.-]+$"
+      placeholder="example@gmail.com"
+      name="email"
+      ><br><br>
 
-      Instrument
+      <label>Instrument</label><br>
       <select name="instrument" id="instrument">
         <option value="Viola">Viola</option>
         <option value="Violin">Violin</option>
@@ -198,58 +127,36 @@
         <option value="Conductor">Conductor</option>
       </select>
       <br><br>
-      
-      Number of Absences<input
-        type="integer"
-        id="number_absences"
-        pattern="^[0-9]+$"
-        placeholder="0-9"
-        name = "absence_number"
-        ><br><br>
 
 
-
-      <input type="submit" name = "submit" value = "Edit User">
-
+      <input type="submit" name="submit" value="Edit User">
     </form>
-    </center>
-    
-    
-    <center>
+  </div>
+  </center>
+
+  <center>
     <h4>Delete members</h4>
-    <!-- get data to add in -->
+  <div>
     <form id="form" action="deleteMember.php" method="POST">
-      First Name<input 
-        type="text" 
-        id="firstName" 
-        pattern="[A-Za-z\s\-]{1,50}"
-        placeholder="Less than 50 characters"
-        name = "firstName"
-        ><br><br>
-      Email<input
-        type="text"
-        id="email"
-        pattern="^[^!-#-$-%-^-&-*-(-)-+-=][A-Z0-9+_.-]+@[A-Z0-9.-]+$"
-        placeholder="example@gmail.com"
-        name = "email"
-        ><br><br>
+      <label>First Name</label><br><input
+      type="text"
+      id="firstName"
+      pattern="[A-Za-z\s\-]{1,50}"
+      placeholder="Less than 50 characters"
+      name="firstName"
+      ><br><br>
+      <label>Email</label><br><input
+      type="text"
+      id="email"
+      pattern="^[^!-#-$-%-^-&-*-(-)-+-=][A-Z0-9+_.-]+@[A-Z0-9.-]+$"
+      placeholder="example@gmail.com"
+      name="email"
+      ><br><br>
 
-
-
-      <input type="submit" name = "submit" value = "Delete User">
-
+      <input type="submit" name="submit" value="Delete User">
     </form>
-    </center>
-    
-    
-    
-    
-    
-    </div>
-        
-        </div>
-      
+  </center>
+</div>
 
-    
 </body>
 <html>

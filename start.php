@@ -62,9 +62,6 @@ if (isset($_SESSION["username"])) { // authenticated
     <break>
     <img src = "wyo-logo.jpeg" /> </break>
     <nav>
-    <a href = "./start.php">Login Page</a> | 
-    <a href = "./admin.html">Admin Page</a> | 
-    <a href = "./member.html">Member Page</a></nav></h2>
     <!-- <h3>Login Page</h3> -->
     <p>
     
@@ -119,7 +116,8 @@ if (isset($_SESSION["username"])) { // authenticated
     
       <center>
       	<label for="username">
-      	Email: 
+      	Email</label>
+      	<br> 
         <input type = "email" 
         id = "emailAddress" 
         name = "username" 
@@ -131,7 +129,8 @@ if (isset($_SESSION["username"])) { // authenticated
       
       <center>
       	<label for="password">
-      	Password: 
+      	Password</label>
+      	<br>
         <input type = "password" 
         name = "password" 
         placeholder="Letters, numbers, special characters" 

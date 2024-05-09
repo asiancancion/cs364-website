@@ -20,21 +20,25 @@
   
   <body class = "partners">    
     <h1>Williamsburg Youth Orchestra Attendance System</h1>
-  
+    <a href="logout.php"><button>Logout</button></a>
     <h2>
     <break>
     <img src = "wyo-logo.jpeg" /> </break>
-    <h2>
     <nav>
-        <a href = "./member_crud.html"> <button>Edit Members</button></a> | 
-        <a href = "./user_crud.html"><button>Edit Users</button></a> | 
-        <a href = "./rehearsal.php"><button>Rehearsal</button></a> |
-        <a href = "./rental.php"><button>Rentals</button></a> |
-        <a href="./admin.php"><button>Admin</button></a> 
-    </nav></h2>
+    <br><br>
+    <nav>
+        <a href="./member_crud.html"><button>Edit Members</button></a> 
+        <a href="./user_crud.html"><button>Edit Users</button></a> 
+        <a href="./rehearsal.php"><button>Rehearsal</button></a> 
+        <a href="./rental.php"><button>Rentals</button></a> 
+        <a href="./admin.php"><button>Admin</button></a>
+        <br>
+        <br>
+    </nav>
+    </h2>
     <div class="adminTitle">
-    <h2>Admin Page</h2>
-    </div?
+    <h2>Rentals</h2>
+    </div>
 
 
     <!-- comment-->
@@ -100,16 +104,111 @@
           		 echo "<td>" . $row['serial_number'] . "</td>";
          		 echo "<td>" . $row['instrument_type'] . "</td>";
          		 echo "<td>" . $row['username'] . "</td>";
-         		 echo "<td>" . $row['checked_in'] . "</td>";
+         		 if ($row['checked_in'] == 't'){
+         		   echo "<td> Checked In </td>";
+         		 }
+         		 else{
+         		   echo "<td> Checked Out </td>";
+         		 }
                 	 echo "</tr>";
       		 }
 
 		?>
-            </table>
-
-        
+            </table>      
 
       </div>
-          <!--Adding people-->
+      <center>
+      <div class="adminTitle">
+      <h2>Edit Instruments</h2>
+      </div>
+    </center>
+      <center>
+    <h4>Add Instrument</h4>
+    <div>
+    <!-- get data to add in -->
+    <form id="form" action="createInstrument.php" method="POST">
+      <label>Serial Number</label><br><input 
+        type="text" 
+        id="serial_number" 
+        pattern="\d+"
+        placeholder="Ex: 100001"
+        name = "serial_number"
+        ><br><br>    
+
+      <label>Instrument</label><br>
+      <select class = "select" name="instrument" id="instrument">
+        <option value="Viola">Viola</option>
+        <option value="Violin">Violin</option>
+        <option value="Cello">Cello</option>
+        <option value="Trumpet">Trumpet</option>
+        <option value="Tuba">Tuba</option>
+        <option value="Oboe">Oboe</option>
+        <option value="Clarinet">Clarinet</option>
+        <option value="French Horn">French Horn</option>
+        <option value="Conductor">Conductor</option>
+      </select>
+      <br><br>
+
+
+
+      <input type="submit" name = "submit" value = "Add Instrument">
+
+    </form>
+    </center>
+    
+    <center>
+    <h4>Checkout Instrument</h4>
+    <div>
+    <!-- get data to add in -->
+    <form id="form" action="checkoutInstrument.php" method="POST">
+      <label>Serial Number</label><br><input 
+        type="text" 
+        id="serial_number" 
+        pattern="\d+"
+        placeholder="Ex: 100001"
+        name = "serial_number"
+        ><br><br>    
+
+      <label>Email</label><br><input
+        type="text"
+        id="email"
+        patter="^[^!-#-$-%-^-&-*-(-)-+-=][A-Z0-9+_.-]+@[A-Z0-9.-]+$"
+        placeholder="example@gmail.com"
+        name = "email"
+        ><br><br>
+
+	
+
+      <input type="submit" name = "submit" value = "Checkout Instrument">
+
+    </form>
+    
+    </center>
+    </div>
+    <center>
+    <h4>Delete Instrument</h4>
+    <div>
+    <!-- get data to add in -->
+    <form id="form" action="deleteInstrument.php" method="POST">
+      <label>Serial Number</label><br><input 
+        type="text" 
+        id="serial_number" 
+        pattern="\d+"
+        placeholder="Ex: 100001"
+        name = "serial_number"
+        ><br><br>    
+
+
+
+      <input type="submit" name = "submit" value = "Delete Instrument">
+
+    </form>
+    </div>
+    </center>
+    
+    
+    </div>
+        
+        </div>
     </body>
 </html>
