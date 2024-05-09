@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Service Partners </title>
+    <title> Rentals </title>
     <link rel="stylesheet" type="text/css" href="csl.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
@@ -145,7 +145,6 @@
         <option value="Oboe">Oboe</option>
         <option value="Clarinet">Clarinet</option>
         <option value="French Horn">French Horn</option>
-        <option value="Conductor">Conductor</option>
       </select>
       <br><br>
 
@@ -185,6 +184,29 @@
     
     </center>
     </div>
+    
+    <center>
+    <h4>Checkin Instrument</h4>
+    <div>
+    <!-- get data to add in -->
+    <form id="form" action="checkInInstrument.php" method="POST">
+      <label>Serial Number</label><br><input 
+        type="text" 
+        id="serial_number" 
+        pattern="\d+"
+        placeholder="Ex: 100001"
+        name = "serial_number"
+        ><br><br>    
+
+	
+
+      <input type="submit" name = "submit" value = "Check In Instrument">
+
+    </form>
+    
+    </center>
+    </div>
+    
     <center>
     <h4>Delete Instrument</h4>
     <div>

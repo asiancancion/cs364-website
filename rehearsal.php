@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Service Partners </title>
+    <title> Rehearsal Attendance </title>
     <link rel="stylesheet" type="text/css" href="csl.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
