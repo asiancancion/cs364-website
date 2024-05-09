@@ -130,9 +130,11 @@
       <label>Serial Number</label><br><input 
         type="text" 
         id="serial_number" 
-        pattern="\d+"
+        pattern="[0-9]{1,6}"
         placeholder="Ex: 100001"
         name = "serial_number"
+        maxlength = "6"
+        required
         ><br><br>    
 
       <label>Instrument</label><br>
@@ -163,9 +165,11 @@
       <label>Serial Number</label><br><input 
         type="text" 
         id="serial_number" 
-        pattern="\d+"
+        pattern="[0-9]{1,6}"
         placeholder="Ex: 100001"
         name = "serial_number"
+        maxlength = "6"
+        required
         ><br><br>    
 
       <label>Email</label><br><input
@@ -193,9 +197,11 @@
       <label>Serial Number</label><br><input 
         type="text" 
         id="serial_number" 
-        pattern="\d+"
+        pattern="[0-9]{1,6}"
         placeholder="Ex: 100001"
         name = "serial_number"
+        maxlength = "6"
+        required
         ><br><br>    
 
 	
@@ -215,9 +221,11 @@
       <label>Serial Number</label><br><input 
         type="text" 
         id="serial_number" 
-        pattern="\d+"
+        pattern="[0-9]{1,6}"
         placeholder="Ex: 100001"
         name = "serial_number"
+        maxlength = "6"
+        required
         ><br><br>    
 
 

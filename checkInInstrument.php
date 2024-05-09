@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 $db = pg_connect("host=localhost dbname=orchestraDatabase user=student password=CompSci364");
 
 $query = "UPDATE RENTAL SET CHECKED_IN = 'TRUE', USERNAME = NULL WHERE SERIAL_NUMBER = $1";

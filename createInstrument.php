@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 $db = pg_connect("host=localhost dbname=orchestraDatabase user=student password=CompSci364");
 $query = "INSERT INTO RENTAL (SERIAL_NUMBER, INSTRUMENT_TYPE, CHECKED_IN) VALUES ($1, $2, $3)";
 $statement = pg_prepare($db, "my_query", $query);
